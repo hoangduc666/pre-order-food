@@ -572,7 +572,7 @@
                                         </div>
                                         <span class="text-danger error error-dishes"></span>
                                     </div>
-
+                                    <span class="text-danger error error-review"></span>
                                 </div>
 
                                 <ul class="list-inline pull-right">
@@ -699,24 +699,19 @@
                 $('#dishes-text').html(htmlDish);
             }
 
-
-
         });
 
         $('#review').on('submit', function (e) {
             e.preventDefault();
             $('.error').html('');
-            if (categoryName != '' && people != '' && restaurantName != '' && dishes != ''){
-               alert('Thành công. Vui lòng kiểm tra console log')
+            if (categoryName !== null && people !== null && restaurantName !== null && dishes.length > 0) {
+                alert('Thành công. Vui lòng kiểm tra console log')
                 console.log('Meal:' ,  ' ', categoryName);
                 console.log('No. of. people:' ,  ' ', people);
                 console.log('Restaurant:' ,  ' ', restaurantName);
                 console.log('Dishes:', ' ', JSON.stringify(dishes));
             } else {
-                $('.error-meal').html('Vui lòng chọn bữa ăn ở bước trước ');
-                $('.error-people').html('Vui lòng nhập số người ở bước trước ');
-                $('.error-restaurant').html('Vui lòng nhập tên nhà hàng ở bước trước ');
-                $('.error-dishes').html('Vui lòng chọn món ăn ở bước trước ');
+                $('.error-review').html('vui lòng người dùng nhập đủ thông tin ở bước trước đó');
             }
         });
 
@@ -795,7 +790,6 @@
 
         });
     }
-
 
 </script>
 </body>
